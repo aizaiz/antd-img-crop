@@ -333,7 +333,7 @@ ImgCrop.propTypes = {
   grid: t.bool,
   rotate: t.bool,
   beforeCrop: t.func,
-  modalTitle: t.string,
+  modalTitle: t.node | t.string,
   modalWidth: t.oneOfType([t.number, t.string]),
   modalOk: t.string,
   modalCancel: t.string,
