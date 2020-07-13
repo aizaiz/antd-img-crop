@@ -88,6 +88,7 @@ const ImgCrop = forwardRef((props, ref) => {
     modalWidth,
     modalOk,
     modalCancel,
+    modalProps,
     children,
   } = props;
 
@@ -270,6 +271,7 @@ const ImgCrop = forwardRef((props, ref) => {
               maskClosable={false}
               destroyOnClose
               {...modalTextProps}
+              {...modalProps}
             >
               <EasyCrop
                 ref={ref}
@@ -333,10 +335,11 @@ ImgCrop.propTypes = {
   grid: t.bool,
   rotate: t.bool,
   beforeCrop: t.func,
-  modalTitle: t.node | t.string,
+  modalTitle: t.string,
   modalWidth: t.oneOfType([t.number, t.string]),
   modalOk: t.string,
   modalCancel: t.string,
+  modalProps: t.object,
   children: t.node,
 };
 

@@ -11,6 +11,7 @@ export interface ImgCropProps {
   modalWidth?: number | string;
   modalOk?: string;
   modalCancel?: string;
+  modalProps?: object;
 }
 declare const ImgCrop: React.FC<ImgCropProps>;
 export default ImgCrop;
