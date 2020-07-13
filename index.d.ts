@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 export interface ImgCropProps {
+  ref?: any;
   aspect?: number;
   shape?: 'rect' | 'round';
   grid?: boolean;

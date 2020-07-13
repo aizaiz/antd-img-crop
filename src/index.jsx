@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useRef, forwardRef } from 'react';
+import React, { useState, useCallback, useRef, forwardRef, useImperativeHandle } from 'react';
 import t from 'prop-types';
 import Cropper from 'react-easy-crop';
 import LocaleReceiver from 'antd/es/locale-provider/LocaleReceiver';
@@ -91,6 +91,15 @@ const ImgCrop = forwardRef((props, ref) => {
     modalProps,
     children,
   } = props;
+
+  // The component instance will be extended
+  // with whatever you return from the callback passed
+  // as the second argument
+  useImperativeHandle(ref, () => ({
+    close() {
+      onClose();
+    },
+  }));
 
   const hasZoom = zoom === true;
   const hasRotate = rotate === true;
