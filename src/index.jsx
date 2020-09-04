@@ -99,6 +99,9 @@ const ImgCrop = forwardRef((props, ref) => {
     close() {
       onClose();
     },
+    ok() {
+      onOk();
+    },
   }));
 
   const hasZoom = zoom === true;
@@ -283,7 +286,7 @@ const ImgCrop = forwardRef((props, ref) => {
               {...modalProps}
             >
               <EasyCrop
-                ref={ref}
+                // ref={ref}
                 src={src}
                 aspect={aspect}
                 shape={shape}
